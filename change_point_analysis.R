@@ -10,7 +10,7 @@ set.seed(2985)
 #-- Generate piecewise exponential data
 
 # 1. Generate uniform random variable
-U <- runif(1000)
+U <- runif(100)
 
 generate_piece_exp <- function(u){
   n = length(u)
@@ -92,7 +92,7 @@ find_cut = function(time_vec){
   return(out)
 }
 
-times <- seq(0.5, 7, length.out = 1000)
+times <- seq(0.5, 7, length.out = 100)
 partial_like_time = find_cut(event_times)
 
 plot(partial_like_time$time_vec, partial_like_time$loglike, type="l")
